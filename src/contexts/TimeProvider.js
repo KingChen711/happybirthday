@@ -17,40 +17,37 @@ export default function TimeProvider({ children }) {
 
   React.useEffect(() => {
     console.log("hello2")
-    const unsubscribe = () => {
-      console.log("hello3")
-      const countDownDate = new Date("Dec 12, 2022 00:00:00").getTime();
-      console.log(countDownDate);
+    console.log("hello3")
+    const countDownDate = new Date("Dec 12, 2022 00:00:00").getTime();
+    console.log(countDownDate);
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+    setTime({
+      days: format(Math.floor(distance / (1000 * 60 * 60 * 24))),
+      hours: format(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
+      minutes: format(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))),
+      seconds: format(Math.floor((distance % (1000 * 60)) / 1000)),
+    })
+    const interval = setInterval(() => {
+      console.log("hello4")
       const now = new Date().getTime();
       const distance = countDownDate - now;
+      if (distance < 0) {
+        console.log(distance);
+        clearInterval(interval);
+        sessionStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, "token");
+      }
       setTime({
         days: format(Math.floor(distance / (1000 * 60 * 60 * 24))),
         hours: format(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
         minutes: format(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))),
         seconds: format(Math.floor((distance % (1000 * 60)) / 1000)),
       })
-      const interval = setInterval(() => {
-        console.log("hello4")
-        const now = new Date().getTime();
-        const distance = countDownDate - now;
-        if (distance < 0) {
-          console.log(distance);
-          clearInterval(interval);
-          sessionStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, "token");
-        }
-        setTime({
-          days: format(Math.floor(distance / (1000 * 60 * 60 * 24))),
-          hours: format(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
-          minutes: format(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))),
-          seconds: format(Math.floor((distance % (1000 * 60)) / 1000)),
-        })
-      }, 1000)
-    }
+    }, 1000)
 
 
-    return (() => {
-      unsubscribe();
-    })
+
+
 
   }, [])
 
