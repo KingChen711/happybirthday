@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
 import avatar from "../assets/avatar.jpg"
-import { LOCAL_STORAGE_TOKEN_NAME } from '../contexts/constant';
 
 export default function HomePage() {
   const [isDisplay, setIsDisplay] = useState(false);
