@@ -18,6 +18,7 @@ export default function Countdown() {
 
   const { time } = useContext(TimeContext);
   const navigate = useNavigate();
+  
   console.log("countdown")
 
   useEffect(() => {
