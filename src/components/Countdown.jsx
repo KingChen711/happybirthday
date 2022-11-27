@@ -18,8 +18,6 @@ export default function Countdown() {
 
   const { time } = useContext(TimeContext);
   const navigate = useNavigate();
-  
-  console.log("countdown")
 
   useEffect(() => {
     let token = sessionStorage.getItem(LOCAL_STORAGE_TOKEN_NAME);

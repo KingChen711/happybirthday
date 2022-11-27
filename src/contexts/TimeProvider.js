@@ -7,7 +7,6 @@ export default function TimeProvider({ children }) {
 
   const [time, setTime] = useState({});
 
-  console.log("hello1")
 
   function format(x) {
     if (x < 10)
@@ -16,10 +15,7 @@ export default function TimeProvider({ children }) {
   }
 
   React.useEffect(() => {
-    console.log("hello2")
-    console.log("hello3")
-    const countDownDate = new Date("Dec 12, 2022 00:00:00").getTime();
-    console.log(countDownDate);
+    const countDownDate = new Date("Nov 27, 2022 21:00:00").getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
     setTime({
@@ -29,7 +25,6 @@ export default function TimeProvider({ children }) {
       seconds: format(Math.floor((distance % (1000 * 60)) / 1000)),
     })
     const interval = setInterval(() => {
-      console.log("hello4")
       const now = new Date().getTime();
       const distance = countDownDate - now;
       if (distance < 0) {
@@ -44,14 +39,7 @@ export default function TimeProvider({ children }) {
         seconds: format(Math.floor((distance % (1000 * 60)) / 1000)),
       })
     }, 1000)
-
-
-
-
-
   }, [])
-
-
   return (
     <TimeContext.Provider value={{ time }}>
       {children}
