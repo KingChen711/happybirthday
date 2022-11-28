@@ -15,15 +15,7 @@ export default function TimeProvider({ children }) {
   }
 
   React.useEffect(() => {
-    const countDownDate = new Date("Nov 27, 2022 21:00:00").getTime();
-    const now = new Date().getTime();
-    const distance = countDownDate - now;
-    setTime({
-      days: format(Math.floor(distance / (1000 * 60 * 60 * 24))),
-      hours: format(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
-      minutes: format(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))),
-      seconds: format(Math.floor((distance % (1000 * 60)) / 1000)),
-    })
+    const countDownDate = new Date("Nov 28, 2022 23:00:00").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countDownDate - now;

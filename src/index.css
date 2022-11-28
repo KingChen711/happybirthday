@@ -8,7 +8,6 @@
 body {
   background-color: rgb(4, 4, 49);
   color: white;
-  overflow: hidden;
 }
 
 
@@ -189,7 +188,7 @@ body {
 
 .firework:nth-child(5) {
   --x: 40vmin;
-  --y: -23vmin;
+  --y: -36vmin;
 }
 
 .firework:nth-child(5),
@@ -202,7 +201,8 @@ body {
   --color5: #C91B5D;
   --color6: #B1E344;
   --finalSize: 60vmin;
-  left: 2%;
+  left: 5%;
+  top: 50%;
   animation-delay: -2.4s;
 }
 
