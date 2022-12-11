@@ -41,7 +41,7 @@ export default function HomePage() {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover"
               }}></div>
-            <div className="name note text-5xl mt-4">Trần Trương Văn</div>
+            <div className="name note text-5xl mt-4">Đào Kim Khánh</div>
           </div>
         </div >
       </div>
