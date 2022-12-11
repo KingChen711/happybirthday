@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import avatar from "../assets/avatar.jpg"
+import avatar from "../assets/avatar.png"
 
 export default function HomePage() {
   const [isDisplay, setIsDisplay] = useState(false);
