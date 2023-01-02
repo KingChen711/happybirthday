@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import background from '../assets/bg.png'
+import background from '../assets/bg.jpg'
 import { TimeContext } from "../contexts/TimeProvider"
 import { LOCAL_STORAGE_TOKEN_NAME } from '../contexts/constant';
 
@@ -31,11 +31,11 @@ export default function Countdown() {
       backgroundImage: `url("${background}")`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
-      backgroundPosition: "bottom",
+      backgroundPosition: "center",
     }}>
-      <div>🎂</div>
-      <div className="font-bold my-8">✨ Countdown to January 1, 2023! ✨</div>
-      <div>Epic things are going to happen in</div>
+      <div>🥳🎆</div>
+      <div className="font-bold my-8">✨ Đếm ngược tới Tết! ✨</div>
+      <div className="font-bold">Điều kỳ diệu sẽ xảy ra trong</div>
       <ul className="flex justify-center items-center mt-8">
         <TimeBox label="Days" time={time.days} />
         <TimeBox label="Hours" time={time.hours} />

@@ -41,7 +41,7 @@ export default function HomePage() {
                 backgroundSize: "cover",
                 backgroundPosition:"center"
               }}></div>
-            <div className="name note text-5xl mt-4">Show Bitch</div>
+            <div className="name note text-5xl mt-4">TẬP ĐOÀN ĐA THIÊN HÀ CAO CẤP</div>
           </div>
         </div >
       </div>
